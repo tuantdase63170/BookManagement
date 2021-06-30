@@ -31,6 +31,6 @@ jobs:
       with:
         app-name: bookmanagementapi2
         slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_223CD0F51B78428BADFF3436098CFAD1 }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_16B80063184E4B97808D5224D3A816FB }}
         package: ${{ github.workspace }}/target/*.jar
 

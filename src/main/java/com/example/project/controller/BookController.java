@@ -43,7 +43,7 @@ public class BookController {
 
 	@GetMapping(value = "/book_id={book_id}")
 	public ResponseEntity<BookDTO> getBookByBookId(@PathVariable(name = "book_id") String book_id) {
-		ResponseEntity<BookDTO> result = service.getBookById(book_id, 0);
+		ResponseEntity<BookDTO> result = service.getBookById(book_id);
 		return result;
 	}
 	// Tested

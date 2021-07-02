@@ -20,11 +20,11 @@ public class BookServiceImp implements BookService {
 	private BookMapper mapper;
 
 	@Override
-	public ResponseEntity<BookDTO> getBookById(String bookId, int sort) {
+	public ResponseEntity<BookDTO> getBookById(String bookId) {
 		if (bookId.trim().length() != 36) {
 			return null;
 		}
-		BookDTO result = mapper.getBookById(bookId, sort);
+		BookDTO result = mapper.getBookById(bookId);
 		return new ResponseEntity<BookDTO>(result, HttpStatus.OK);
 	}
 

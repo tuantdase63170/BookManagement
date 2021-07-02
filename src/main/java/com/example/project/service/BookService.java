@@ -8,7 +8,7 @@ import com.example.project.model.BookDTO;
 
 public interface BookService {
 
-	ResponseEntity<BookDTO> getBookById(String bookId, int sort);
+	ResponseEntity<BookDTO> getBookById(String bookId);
 
 	ResponseEntity<List<BookDTO>> getBooks(String searchValue, int column, int sort);
 

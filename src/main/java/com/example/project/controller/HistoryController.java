@@ -19,6 +19,16 @@ public class HistoryController {
 	@Autowired
 	private HistoryService service;
 
+	// ### sort
+	// 0 - No sort
+	// 1 - Sort by history_id
+	// 2 - Sort by book_id
+	// 3 - Sort by amount
+	// 4 - Sort by customer_id
+	// 5 - Sort by manager_username
+	// 6 - Sort by borrow_date
+	// 7 - Sort by return_date
+
 	@GetMapping(value = "/all/{sort}")
 	public ResponseEntity<List<HistoryDTO>> getAllHistories(@PathVariable(name = "sort") int sort) {
 		ResponseEntity<List<HistoryDTO>> result = service.getAllHistories(sort);
@@ -27,8 +37,7 @@ public class HistoryController {
 	// Tested
 
 	@GetMapping(value = "/history_id={history_id}")
-	public ResponseEntity<HistoryDTO> getHistoryByHistoryId(
-			@PathVariable(name = "history_id") String history_id) {
+	public ResponseEntity<HistoryDTO> getHistoryByHistoryId(@PathVariable(name = "history_id") String history_id) {
 		ResponseEntity<HistoryDTO> result = service.getHistoryByHistoryId(history_id);
 		return result;
 	}

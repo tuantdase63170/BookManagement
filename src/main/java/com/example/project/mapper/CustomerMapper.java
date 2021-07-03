@@ -126,4 +126,7 @@ public interface CustomerMapper {
 			+ "</script>")
 	List<CustomerDTO> getCustomersByInsertedAt(String insertedAt, int sort);
 	
+	@Select("select count(*) from Customer")
+	Integer getTotalCustomers();
+	
 }

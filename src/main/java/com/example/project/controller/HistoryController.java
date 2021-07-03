@@ -91,4 +91,11 @@ public class HistoryController {
 	}
 	// Tested
 
+	@GetMapping(value = "/count")
+	public ResponseEntity<Integer> getTotalHistories() {
+		ResponseEntity<Integer> result = service.getTotalHistories();
+		return result;
+	}
+	// Tested
+
 }

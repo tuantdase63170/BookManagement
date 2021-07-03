@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.project.model.BookDTO;
@@ -132,6 +133,27 @@ public class BookController {
 	public ResponseEntity<List<BookDTO>> getBooksByUpdatedDate(@PathVariable(name = "updated_date") String updated_date,
 			@PathVariable(name = "sort") int sort) {
 		ResponseEntity<List<BookDTO>> result = service.getBooks(updated_date, 11, sort);
+		return result;
+	}
+	// Tested
+	
+	@GetMapping(value = "/attributes/{sort}")
+	public ResponseEntity<List<BookDTO>> getBooksByAttributes(
+			@RequestParam(value = "title") String title,
+			@RequestParam(value = "release_year") String release_year,
+			@RequestParam(value = "language_id") String language_id,
+			@RequestParam(value = "category_id") String category_id, 
+			@RequestParam(value = "min_price") String min_price,
+			@RequestParam(value = "max_price") String max_price,
+			@PathVariable(value = "sort") int sort) {
+		ResponseEntity<List<BookDTO>> result = service.getBooksByAttributes(title, release_year, language_id, category_id, min_price, max_price, sort);
+		return result;
+	}
+	// Tested
+	
+	@GetMapping(value = "/count")
+	public ResponseEntity<Integer> getTotalBooks() {
+		ResponseEntity<Integer> result = service.getTotalBooks();
 		return result;
 	}
 	// Tested

@@ -94,5 +94,8 @@ public interface LanguageMapper {
 			+ " </choose>"
 			+ "</script>")
 	List<LanguageDTO> getLanguagesByName(String languageName, int isActived, int sort);
+
+	@Select("select count(*) from Language")
+	Integer getTotalLanaguages();
 	
 }

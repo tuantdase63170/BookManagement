@@ -63,5 +63,12 @@ public class CustomerController {
 		return result;
 	}
 	// Tested
+	
+	@GetMapping(value = "/count")
+	public ResponseEntity<Integer> getTotalCustomers() {
+		ResponseEntity<Integer> result = service.getTotalCustomers();
+		return result;
+	}
+	// Tested
 
 }

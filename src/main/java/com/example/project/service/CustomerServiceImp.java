@@ -78,4 +78,10 @@ public class CustomerServiceImp implements CustomerService {
 		return new ResponseEntity<List<CustomerDTO>>(result, HttpStatus.OK);
 	}
 
+	@Override
+	public ResponseEntity<Integer> getTotalCustomers() {
+		int result = mapper.getTotalCustomers();
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+
 }

@@ -58,4 +58,10 @@ public class CategoryServiceImp implements CategoryService {
 		return new ResponseEntity<List<CategoryDTO>>(result, HttpStatus.OK);
 	}
 
+	@Override
+	public ResponseEntity<Integer> getTotalCategories() {
+		int result = mapper.getTotalCategories();
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+
 }

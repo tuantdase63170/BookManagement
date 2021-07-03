@@ -117,5 +117,8 @@ public interface HistoryMapper {
 			+ "</choose>"
 			+ "</script>")
 	List<HistoryDTO> getHistories(String searchValue, int column, int sort);
+	
+	@Select("select count(*) from History")
+	Integer getTotalHistories();
 
 }

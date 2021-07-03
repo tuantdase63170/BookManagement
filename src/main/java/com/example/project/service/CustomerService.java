@@ -17,5 +17,7 @@ public interface CustomerService {
 	ResponseEntity<List<CustomerDTO>> getCustomersByPhone(String phone, int sort);
 	
 	ResponseEntity<List<CustomerDTO>> getCustomersByInsertedAt(String insertedAt, int sort);
+	
+	ResponseEntity<Integer> getTotalCustomers();
 
 }

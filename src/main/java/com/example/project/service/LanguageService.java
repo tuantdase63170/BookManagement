@@ -14,4 +14,6 @@ public interface LanguageService {
 
 	ResponseEntity<List<LanguageDTO>> getLanguagesByName(String languageName, int isActived, int sort);
 
+	ResponseEntity<Integer> getTotalLanguages();
+
 }

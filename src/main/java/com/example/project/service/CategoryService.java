@@ -13,5 +13,7 @@ public interface CategoryService {
 	ResponseEntity<CategoryDTO> getCategoryById(String categoryId, int isActived);
 
 	ResponseEntity<List<CategoryDTO>> getCategoriesByName(String categoryName, int isActived, int sort);
+	
+	ResponseEntity<Integer> getTotalCategories();
 
 }

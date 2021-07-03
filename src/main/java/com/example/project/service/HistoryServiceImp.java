@@ -97,4 +97,10 @@ public class HistoryServiceImp implements HistoryService {
 		}
 	}
 
+	@Override
+	public ResponseEntity<Integer> getTotalHistories() {
+		int result = mapper.getTotalHistories();
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+
 }

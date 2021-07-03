@@ -95,4 +95,7 @@ public interface CategoryMapper {
 			+ "</script>")
 	List<CategoryDTO> getCategoriesByName(String categoryName, int isActived, int sort);
 	
+	@Select("select count(*) from Category")
+	Integer getTotalCategories();
+	
 }

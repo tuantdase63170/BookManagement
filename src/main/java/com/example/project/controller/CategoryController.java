@@ -53,5 +53,12 @@ public class CategoryController {
 		return result;
 	}
 	// Tested
+	
+	@GetMapping(value = "/count")
+	public ResponseEntity<Integer> getTotalCategories() {
+		ResponseEntity<Integer> result = service.getTotalCategories();
+		return result;
+	}
+	// Tested
 
 }

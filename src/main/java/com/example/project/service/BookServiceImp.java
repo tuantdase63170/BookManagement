@@ -120,4 +120,22 @@ public class BookServiceImp implements BookService {
 		}
 	}
 
+	@Override
+	public ResponseEntity<List<BookDTO>> getBooksByAttributes(String title, String releaseYear, String languageId,
+			String categoryId, String minPrice, String maxPrice, int sort) {
+		try {
+			List<BookDTO> result = mapper.getBooksByAttributes(title, releaseYear, languageId, categoryId, minPrice,
+					maxPrice, sort);
+			return new ResponseEntity<List<BookDTO>>(result, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<List<BookDTO>>(new ArrayList<>(), HttpStatus.OK);
+		}
+	}
+
+	@Override
+	public ResponseEntity<Integer> getTotalBooks() {
+		int result = mapper.getTotalBooks();
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+
 }

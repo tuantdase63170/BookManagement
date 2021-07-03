@@ -50,5 +50,12 @@ public class LanguageController {
 		ResponseEntity<List<LanguageDTO>> result = service.getLanguagesByName(language_name, is_actived, sort);
 		return result;
 	}
-
+	
+	@GetMapping(value = "/count")
+	public ResponseEntity<Integer> getTotalLanguages() {
+		ResponseEntity<Integer> result = service.getTotalLanguages();
+		return result;
+	}
+	// Tested
+	
 }

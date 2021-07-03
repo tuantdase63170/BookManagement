@@ -13,5 +13,7 @@ public interface HistoryService {
 	ResponseEntity<HistoryDTO> getHistoryByHistoryId(String historyId);
 
 	ResponseEntity<List<HistoryDTO>> getHistories(String searchValue, int column, int sort);
+	
+	ResponseEntity<Integer> getTotalHistories();
 
 }

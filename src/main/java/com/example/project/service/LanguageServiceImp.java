@@ -58,4 +58,10 @@ public class LanguageServiceImp implements LanguageService {
 		return new ResponseEntity<List<LanguageDTO>>(result, HttpStatus.OK);
 	}
 
+	@Override
+	public ResponseEntity<Integer> getTotalLanguages() {
+		int result = mapper.getTotalLanaguages();
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+
 }
